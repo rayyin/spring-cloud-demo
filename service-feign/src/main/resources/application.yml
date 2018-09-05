@@ -1,9 +1,9 @@
 server:
-  port: 9095
+  port: 9081
 
 spring:
   application:
-    name: service-user
+    name: service-feign
 
 eureka:
   client:
@@ -15,3 +15,6 @@ eureka:
           enabled: true
     lease:
           duration: 5
+feign:
+  hystrix:
+    enabled: true
