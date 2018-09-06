@@ -1,0 +1,26 @@
+server:
+  port: 8769
+
+spring:
+  application:
+    name: zuul
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+          enabled: true
+    lease:
+          duration: 5
+
+zuul:
+  routes:
+    api-a:
+      path: /api-ribbon/**
+      serviceId: service-ribbon
+    api-b:
+      path: /api-feign/**
+      serviceId: service-feign
