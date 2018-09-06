@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8881
 
 eureka:
   client:
@@ -9,14 +9,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     healthcheck:
       enabled: true
+    lease:
+      duration: 5
 
 spring:
   application:
-    name: config-server
+    name: config-client
   cloud:
     config:
       label: master
-      server:
-        git:
-          uri: https://github.com/rayyin/springcloud-demo.git
-          search-paths: config-file
+      profile: prod
+      #uri: http://localhost:8888/   #read from config server directly
