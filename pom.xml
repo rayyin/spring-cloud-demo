@@ -26,6 +26,8 @@
 		<module>zuul</module>
 		<module>config-server</module>
 		<module>config-client</module>
+		<module>service-msg-bus</module>
+		<module>service-zipkin</module>
 	</modules>
 
 	<properties>

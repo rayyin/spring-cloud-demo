@@ -1,0 +1,19 @@
+server:
+  port: 9095
+
+spring:
+  application:
+    name: service-zipkin
+  zipkin:
+    base-url: http://localhost:9411
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+          enabled: true
+    lease:
+          duration: 5
